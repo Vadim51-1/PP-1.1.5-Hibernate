@@ -13,10 +13,11 @@ public class Main {
 //        userDao.getAllUsers();
 //        userDao.cleanUsersTable();
 //        userDao.dropUsersTable();
+
         UserDao userDao1 = new UserDaoHibernateImpl();
         userDao1.createUsersTable();
-        userDao1.saveUser("Вадим", "Шd", (byte) 86);
-        userDao1.saveUser("Алена", "Шиленкова", (byte) 6);
+        userDao1.saveUser("Вадим", "Шиленков", (byte) 28);
+        userDao1.saveUser("Алена", "Шиленкова", (byte) 25);
         userDao1.saveUser("Матвей", "Шиленков", (byte) 2);
         userDao1.removeUserById(2);
         userDao1.getAllUsers();

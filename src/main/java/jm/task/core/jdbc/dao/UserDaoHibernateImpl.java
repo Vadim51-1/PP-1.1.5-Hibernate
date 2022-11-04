@@ -5,7 +5,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+
 import java.util.List;
+
 import static jm.task.core.jdbc.util.Util.HibernateUtil.getSessionFactory;
 
 public class UserDaoHibernateImpl implements UserDao {
@@ -23,7 +25,6 @@ public class UserDaoHibernateImpl implements UserDao {
                     "age TINYINT NOT NULL)").addEntity(User.class);
             query.executeUpdate();
             transaction.commit();
-            session.close();
         } catch (HibernateException e) {
             e.printStackTrace();
         }
@@ -36,7 +37,6 @@ public class UserDaoHibernateImpl implements UserDao {
             Query query = session.createSQLQuery("DROP TABLE IF EXISTS users").addEntity(User.class);
             query.executeUpdate();
             transaction.commit();
-            session.close();
         } catch (HibernateException e) {
             e.printStackTrace();
         }

@@ -3,13 +3,13 @@ package jm.task.core.jdbc.model;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Table (name = "users")
+@Table(name = "users")
 @Entity
 public class User {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
@@ -63,7 +63,6 @@ public class User {
         this.age = age;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -76,7 +75,6 @@ public class User {
     public int hashCode() {
         return Objects.hash(id, name, lastName, age);
     }
-
 
     @Override
     public String toString() {
